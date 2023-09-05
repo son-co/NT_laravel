@@ -1,0 +1,44 @@
+.img_spiner {
+    transition: 0.4s;
+    transform: rotateY(0);
+}
+
+.img_spiner:hover {
+    transform: rotateY(360deg);
+}
+
+
+/* .list-product::-webkit-scrollbar, */
+.cart::-webkit-scrollbar { 
+    width: 0 !important;
+    display: none; 
+}
+
+
+.nav__input:checked~.nav-child_mobile {
+    display: flex;
+}
+
+.nav__inputs:checked~.nav-fa_mobile {
+    display: flex;
+}
+
+.nav__inputss:checked~.tab-mobile  {
+    display: block;
+    transform: translateX(0%);
+}
+
+
+.swiper-slide.deal-hot{
+    height: calc((100% - 40px) / 2) !important;
+}
+
+
+.tab-content.active{
+    display: block !important;
+}
+
+
+.openTab.active {
+    border-bottom:solid gray 2px;
+}
