@@ -86,34 +86,31 @@
                 </div>
                 <div class="hidden p-4 rounded-lg bg-gray-50 tab-content" id="cmt" >
                     <div class="divide-y">
-                        <div  class="flex pb-3">
-                            <span class="text-3xl"><i class="fa-solid fa-circle-user"></i> </span>
-                            <div class="mx-3">
-                                <span class="font-bold hover:cursor-pointer">Nguyễn Thế Sơn</span>
-                                <p class="text-neutral-400 font-light text-sm">26/08/2023</p>
-                                <p class="text-sm text-gray-600">Sống từ bé tới giờ, nay tôi mới biết có một sản phẩm chất lượng như này. </p>
-                                <img src="{{asset('images/product/dongho1.png')}}" class="w-40 h-40" alt="">
+                        @if (!empty($review))
+                            @foreach($review as $item)
+                                <div  class="flex pb-3">
+                                    <span class="text-3xl"><i class="fa-solid fa-circle-user"></i> </span>
+                                    <div class="mx-3">
+                                        <span class="font-bold hover:cursor-pointer">{{$item->fullname}}</span>
+                                        <p class="text-neutral-400 font-light text-sm">{{$item->date}}</p>
+                                        <p class="text-sm text-gray-600">{{$item->content}}</p>
+                                        <img src="{{asset('images/review/'.$item->image)}}" class="w-40 h-40" alt="">
 
-                            </div>
-                        </div>
-                        <div  class="flex pb-3">
-                            <span class="text-3xl"><i class="fa-solid fa-circle-user"></i> </span>
-                            <div class="mx-3">
-                                <span class="font-bold hover:cursor-pointer">Nguyễn Thế Sơn</span>
-                                <p class="text-neutral-400 font-light text-sm">26/08/2023</p>
-                                <p class="text-sm text-gray-600">Sống từ bé tới giờ, nay tôi mới biết có một sản phẩm chất lượng như này. </p>
-                                <img src="{{asset('images/product/dongho1.png')}}" class="w-40 h-40" alt="">
-
-                            </div>
-                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        
+                        @else
+                            <p>Chưa có đánh giá nào về sản phẩm này!</p>
+                        @endif
                     </div>
 
                     <div class="py-5">
                         @auth
-                            <form action="" action="POST">
+                            <form action="{{route('addReview')}}" method="POST" enctype="multipart/form-data">
                                 <hr> <br>
-                                <textarea name="" id="" cols="30" class="w-full border px-2 py-2" placeholder="Chia sẻ cảm nhận của bạn....."></textarea>
-                                <input type="file" name="" id="" class="hover:cursor-pointer"> <br>
+                                <textarea name="content_review" id="" required  cols="30" class="w-full border px-2 py-2" placeholder="Chia sẻ cảm nhận của bạn....."></textarea>
+                                <input type="file" name="image_review" id="" class="hover:cursor-pointer"> <br>
                                 <input type="submit" value="Chia sẻ" class="my-3 bg-neutral-14 rounded-md px-4 py-3 text-white hover:cursor-pointer">
                                 @csrf
                             </form>

@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckOutController;
 
 
 /*
@@ -19,6 +20,7 @@ use App\Http\Controllers\CartController;
 */
 
 Route::get('/', [ProductsController::class, 'index'])->name('home');
+Route::get('/checkout', [CheckOutController::class, 'getCheckout'])->name('checkout');
 Route::get('/product/{id}', [ProductsController::class, 'productDetail'])->name('product.show');
 
 Route::middleware('auth')->group(function ()  {
@@ -26,6 +28,7 @@ Route::middleware('auth')->group(function ()  {
     Route::get('/addCart', [CartController::class, 'addCart'])->name('addCart');
     Route::get('/addCartHome/{id}', [CartController::class, 'addCartHome'])->name('addCartHome');
     Route::get('/deleteCart/{id}', [CartController::class, 'deleteCart'])->name('deleteCart');
+    Route::post('/addReview', [ProductsController::class, 'addReview'])->name('addReview');
     // Route::get('/increaseCart/{proid}/{cid}', [CartController::class, 'increaseCart'])->name('increaseCart');
     // Route::get('/decreaseCart/{proid}/{cid}', [CartController::class, 'decreaseCart'])->name('decreaseCart');
     

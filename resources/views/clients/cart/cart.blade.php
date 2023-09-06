@@ -35,7 +35,7 @@
                                 <a href="{{ route('product.show', ['id' => $item->productID]) }}" class="col-span-1 py-5 pl-5 flex justify-start items-center gap-4">
                                     
                                     <img src="{{asset('images/product/'.$item->image)}}" class="w-32 h-32" alt="">
-                                    <p class="text-neutral-500">{{$item->name}}</p>
+                                    <p class="text-neutral-500 uppercase">{{$item->name}}</p>
                                 </a>
                                 <div class="col-span-1 py-5 px-5 text-neutral-14 h-full ">
                                 <div action="" class=" grid grid-cols-7 place-items-center place-content-center h-full">

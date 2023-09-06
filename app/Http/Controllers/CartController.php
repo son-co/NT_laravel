@@ -96,9 +96,7 @@ class CartController extends Controller
     public function calculateTotal()
     {
         $userId = Auth::user()->id; // Lấy ID của người dùng đang đăng nhập
-
         $cartItems = Cart::where('userID', $userId)->with('products')->get(); // Lấy các sản phẩm trong giỏ hàng của người dùng
-        
         $totalAmount = 0;
 
         foreach ($cartItems as $item) {
@@ -110,32 +108,22 @@ class CartController extends Controller
 
     public function calculateQuantity()
     {
-        $userId = Auth::user()->id;
+        if(Auth::check()){
+            $userId = Auth::user()->id;
 
-        $cartItems = Cart::where('userID', $userId)
-                        ->get();
-
-        $totalQuantity = $cartItems->groupBy('productID')
-                                    ->sum(function ($item) {
-                                        return $item->sum('quantity');
-                                    });
-
-        return $totalQuantity;
+            $cartItems = Cart::where('userID', $userId)
+                            ->get();
+    
+            $totalQuantity = $cartItems->groupBy('productID')
+                                        ->sum(function ($item) {
+                                            return $item->sum('quantity');
+                                        });
+    
+            return $totalQuantity;
+        }else{
+            return 0;
+        }
+        
     }
-    // public function increaseCart($proid,$cid)
-    // {
-    //     // $this->cart->deleteCart($id);
-    //     $quantity = (int)$this->cart->getQuantity(session('userID'),$proid);
-    //     $this->cart->increaseCart($quantity++,$cid);
-
-    //     return back();
-    // }
-    // public function decreaseCart($proid,$cid)
-    // {
-    //     // $this->cart->deleteCart($id);
-    //     $quantity = (int)$this->cart->getQuantity(session('userID'),$proid);
-    //     $this->cart->decreaseCart($quantity--,$cid);
-
-    //     return back();
-    // }
+    
 }
