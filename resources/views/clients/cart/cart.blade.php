@@ -63,7 +63,7 @@
 
                         <div class="flex justify-end items-center gap-16 py-5">
                             <a href="{{route('home')}}" class="bg-neutral-100 px-5 py-3 rounded hover:bg-neutral-400">Tiếp tục mua hàng</a>
-                            <a href="" class="bg-neutral-14 px-5 py-3 rounded hover:bg-orange-500">Tiến hành thanh Toán</a>
+                            <a href="{{route('checkout')}}" class="bg-neutral-14 px-5 py-3 rounded hover:bg-orange-500">Tiến hành thanh Toán</a>
                         </div>
                     </div>
                 </form>

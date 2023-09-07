@@ -115,39 +115,38 @@
                             </span>
                         </a>
                         <div class=" absolute top-12 -right-28 backdrop-blur-xl shadow w-72 overflow-auto hidden group-hover:block ">
-                        <div class="cart max-h-56 lg:max-h-72 overflow-y-scroll scroll-smooth">
-                            @if(!empty($headerData))
-                                @foreach ($headerData as $item)
-                                    <a href="{{route('product.show', ['id' => $item->productID])}}" class="px-3 my-3 flex justify-between items-center space-x-2">
-                                        <div>
-                                            <img src="{{asset('images/product/'.$item->image)}}" class="w-14 h-14" alt="">
-                                        </div>
-                                        <div class="text-xs truncate px-2 text-left">
-                                            <p class="truncate uppercase w-24">{{$item->name}}</p>
-                                            <p class="text-red-400">{{number_format($item->price)}}đ</p>
-                                            <p class="text-red-400">x{{$item->quantity}}</p>
-                                        </div>
-                                        <div class="text-xs text-neutral-14">
-                                            <p>{{number_format((int)$item->price * $item->quantity)}}đ</p>
-                                        </div>
-                                    </a>
-                                @endforeach
-                            @else
-                                <p>Chưa có sản phẩm nào được thêm vào giở hàng</p>
-                            @endif
-                           
-                        </div>
-                        <a href="" class="bg-neutral-14 w-full flex  justify-center items-center px-3 py-3 text-white">
-                            <p>THANH TOÁN</p>
-                            {{-- <p class="ml-2 text-base">{{number_format($total)}}đ</p> --}}
-                        </a>
+                            <div class="cart max-h-56 lg:max-h-72 overflow-y-scroll scroll-smooth">
+                                @if(!empty($headerData))
+                                    @foreach ($headerData as $item)
+                                        <a href="{{route('product.show', ['id' => $item->productID])}}" class="px-3 my-3 flex justify-between items-center space-x-2">
+                                            <div>
+                                                <img src="{{asset('images/product/'.$item->image)}}" class="w-14 h-14" alt="">
+                                            </div>
+                                            <div class="text-xs truncate px-2 text-left">
+                                                <p class="truncate uppercase w-24">{{$item->name}}</p>
+                                                <p class="text-red-400">{{number_format($item->price)}}đ</p>
+                                                <p class="text-red-400">x{{$item->quantity}}</p>
+                                            </div>
+                                            <div class="text-xs text-neutral-14">
+                                                <p>{{number_format((int)$item->price * $item->quantity)}}đ</p>
+                                            </div>
+                                        </a>
+                                    @endforeach
+                                @else
+                                    <p>Chưa có sản phẩm nào được thêm vào giở hàng</p>
+                                @endif
+                            </div>
+                            <a href="{{route('checkout')}}" class="bg-neutral-14 w-full flex  justify-center items-center px-3 py-3 text-white">
+                                <p class="uppercase">Tiến hành THANH TOÁN</p>
+                                {{-- <p class="ml-2 text-base">{{number_format($total)}}đ</p> --}}
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="realtive  px-5 h-full flex items-center hover:cursor-pointer group">
                 <a href=""> <i class="fa-solid fa-user text-neutral-14 text-xl"></i></a>
                 <ul class="absolute hidden group-hover:block shadow top-16 right-5 w-48 py-5 px-5 divide-y-2 divide-neutral-14 backdrop-blur-lg">
-                    <li class="py-2 hover:text-neutral-14"><a href="">{{ auth()->user()->fullname }}</a></li>
+                    <li class="py-2 hover:text-neutral-14"><a href="{{route('account',['id' => auth()->user()->id])}}">{{ auth()->user()->fullname }}</a></li>
                     <li class="py-2 hover:text-neutral-14"><a href="{{route('log.logout')}}">Đăng xuất</a></li>
                 </ul>
                 </div>

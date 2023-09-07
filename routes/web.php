@@ -22,8 +22,6 @@ use App\Http\Controllers\UserDetailController;
 */
 
 Route::get('/', [ProductsController::class, 'index'])->name('home');
-Route::get('/checkout', [CheckOutController::class, 'getCheckout'])->name('checkout');
-Route::get('/account', [UserDetailController::class, 'getAccount'])->name('account');
 Route::get('/product/{id}', [ProductsController::class, 'productDetail'])->name('product.show');
 
 Route::middleware('auth')->group(function ()  {
@@ -32,9 +30,9 @@ Route::middleware('auth')->group(function ()  {
     Route::get('/addCartHome/{id}', [CartController::class, 'addCartHome'])->name('addCartHome');
     Route::get('/deleteCart/{id}', [CartController::class, 'deleteCart'])->name('deleteCart');
     Route::post('/addReview', [ProductsController::class, 'addReview'])->name('addReview');
-    // Route::get('/increaseCart/{proid}/{cid}', [CartController::class, 'increaseCart'])->name('increaseCart');
-    // Route::get('/decreaseCart/{proid}/{cid}', [CartController::class, 'decreaseCart'])->name('decreaseCart');
-    
+    Route::get('/checkout', [CheckOutController::class, 'getCheckout'])->name('checkout');
+    Route::get('/account/{id}', [UserDetailController::class, 'getAccount'])->name('account');
+   
 });
 
 Route::prefix('log')->name('log.')->group(function(){

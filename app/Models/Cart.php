@@ -33,18 +33,5 @@ class Cart extends Model
         return DB::delete('DELETE FROM cart WHERE id = ?', [$id]);
     }
 
-    // public function getQuantity($userID,$productID){
-    //     return DB::select('SELECT quantity FROM cart AS c WHERE c.userid =? AND c.productID=?', [$userID,$productID]);
-
-    // }
-
-    // public function increaseCart($quantity,$id){
-    //     return DB::update('UPDATE cart SET quantity=? WHERE id = ?', [$quantity,$id]);
-    // }
-
-    // public function decreaseCart($quantity,$id){
-    //     return DB::update('UPDATE cart SET quantity=? WHERE id = ?', [$quantity,$id]);
-    // }
-
-    
+       
 }

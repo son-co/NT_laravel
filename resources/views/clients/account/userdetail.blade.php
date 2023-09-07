@@ -96,25 +96,36 @@
                                     </label>
                                 </div>
                                 <div class="col-span-2 row-start-1 px-3 border-r-[1px]">
-                                    <div class="grid grid-cols-3 items-center gap-3 my-5 ">
+                                    <div class="grid grid-cols-3 items-center gap-3 my-3 ">
                                         <label for="" class="text-neutral-400 text-right">Tên đăng nhập</label>
                                         <input type="text" value="Nguyễn Thế Sơn" class="w-full text-sm border col-span-2 h-10 px-3 focus:outline-none" name="" id="">
                                     </div>
 
-                                    <div class="grid grid-cols-3 items-center gap-3 my-5">
+                                    <div class="grid grid-cols-3 items-center gap-3 my-3">
                                         <label for="" class="text-neutral-400 text-right">Email</label>
                                         <input type="text" value="ngtheson14@gmail.com" class="w-full text-sm border col-span-2 h-10 px-3 focus:outline-none" name="" id="">
                                     </div>
 
-                                    <div class="grid grid-cols-3 items-center gap-3 my-7">
+                                    <div class="grid grid-cols-3 items-center gap-3 my-3">
                                         <label for="" class="text-neutral-400 text-right">Ngày sinh</label>
                                         <div class="col-span-2 grid grid-cols-3 justify-center items-center gap-2 w-full">
-                                            <input type="text" placeholder="Ngày" name="" id="" class="w-full h-10 px-3 border focus:outline-none ">
-                                            <input type="text" placeholder="Tháng" name="" id="" class="w-full h-10 px-3 border focus:outline-none ">
-                                            <input type="text" placeholder="Năm" name="" id="" class="w-full h-10 px-3 border focus:outline-none ">
+                                            <input type="text" placeholder="Ngày" value="14" name="" id="" class="w-full h-10 px-3 border focus:outline-none ">
+                                            <input type="text" placeholder="Tháng" value="1" name="" id="" class="w-full h-10 px-3 border focus:outline-none ">
+                                            <input type="text" placeholder="Năm" value="2001" name="" id="" class="w-full h-10 px-3 border focus:outline-none ">
                                         </div>
                                     </div>
-                                    <div class="grid grid-cols-3 items-center gap-3 my-7">
+
+                                    <div class="grid grid-cols-3 items-center gap-3 my-5">
+                                        <label for="" class="text-neutral-400 text-right">Số điện thoại</label>
+                                        <input type="text" value="0123456789" class="w-full text-sm border col-span-2 h-10 px-3 focus:outline-none" name="" id="">
+                                    </div>
+
+                                    <div class="grid grid-cols-3 items-center gap-3 my-5">
+                                        <label for="" class="text-neutral-400 text-right">Địa chỉ</label>
+                                        <input type="text" value="Quận 12, HCMC" class="w-full text-sm border col-span-2 h-10 px-3 focus:outline-none" name="" id="">
+                                    </div>
+
+                                    <div class="grid grid-cols-3 items-center gap-3 mt-7">
                                         <label for="" class="text-neutral-400 text-right"></label>
                                         <input type="submit" value="Lưu" class="w-20 border bg-neutral-14 text-white cursor-pointer hover:bg-neutral-14/70 col-span-2 h-10 px-3 focus:outline-none" name="" id="">
                                     </div>

@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 use App\Models\Cart;
 use App\Models\Reviews;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\CartController;
-use Illuminate\Support\Facades\View;
 use Carbon\Carbon;
 
 class ProductsController extends Controller
@@ -43,8 +41,6 @@ class ProductsController extends Controller
         }
         
     }
-
-
     public function productDetail(Request $request,$id){
         $review = $this->review->getReview($id);
         $product = $this->product->getProduct($id);
