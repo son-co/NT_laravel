@@ -27,6 +27,8 @@ function numberWithCommas(number) {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 }
 
+initTE({ Tab });
+
 // document.addEventListener('DOMContentLoaded', function() {
 //   const decreaseButton = document.getElementById('decrease');
 //   const increaseButton = document.getElementById('increase');

@@ -40,5 +40,6 @@
 
 
 .openTab.active {
-    border-bottom:solid gray 2px;
+    border-bottom:solid #F7941D 2px;
+    color: #F7941D;
 }

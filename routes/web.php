@@ -6,6 +6,8 @@ use App\Http\Controllers\LogController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckOutController;
+use App\Http\Controllers\UserDetailController;
+
 
 
 /*
@@ -21,6 +23,7 @@ use App\Http\Controllers\CheckOutController;
 
 Route::get('/', [ProductsController::class, 'index'])->name('home');
 Route::get('/checkout', [CheckOutController::class, 'getCheckout'])->name('checkout');
+Route::get('/account', [UserDetailController::class, 'getAccount'])->name('account');
 Route::get('/product/{id}', [ProductsController::class, 'productDetail'])->name('product.show');
 
 Route::middleware('auth')->group(function ()  {

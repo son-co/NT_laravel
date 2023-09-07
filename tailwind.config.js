@@ -4,6 +4,7 @@ module.exports = {
       "./resources/**/*.blade.php",
       "./resources/**/*.js",
       "./resources/**/*.vue",
+      "./node_modules/tw-elements/dist/js/**/*.js"
   ],
   theme: {
       extend: {
@@ -25,7 +26,8 @@ module.exports = {
                   11: "#8CA799",
                   12: "#1FA860",
                   13: "#009045",
-                  14: "#F7941D"
+                  14: "#F7941D",
+                  15: "#EFEFEF"
               },
               error: "#F13327",
           },
@@ -53,5 +55,6 @@ module.exports = {
           },
       },
   },
-  plugins: [],
+//   plugins: [],
+  plugins: [require("tw-elements/dist/plugin.cjs")]
 };
