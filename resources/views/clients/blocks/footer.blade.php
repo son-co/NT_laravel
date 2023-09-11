@@ -1,4 +1,4 @@
-<footer class="w-full ">
+<footer class="w-full font-libre">
     <div class="bg-neutral-14">
         <div class="!h-40  swiper mySwiperr container ">
             <div class="swiper-wrapper content-support h-full  flex justify-between items-center">

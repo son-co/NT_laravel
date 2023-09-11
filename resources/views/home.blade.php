@@ -1,7 +1,7 @@
 @extends('clients.layouts.page')
 
 @section('slider')
-<div class="w-full h-full">
+<div class="w-full h-full font-libre">
      <div class="slider">
         <img src="./images/slider_1.jpg" alt="">
     </div>

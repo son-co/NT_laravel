@@ -1,7 +1,7 @@
 @extends('clients.layouts.page')
 
 @section('slider')
-    <div class="w-full h-full font-mono">
+    <div class="w-full h-full font-libre">
         <div class="slider relative">
             <img src="../images/bg_breadcrumb.jpg" alt="">
             <div class="absolute top-0 right-0 left-0 h-full flex flex-col justify-center items-center">
@@ -18,7 +18,7 @@
             @if (session('msg'))
                 <div>{{session('msg')}}</div>
             @endif
-            <form action="{{route('log.signUser')}}" method="post" class="font-mono flex flex-col justify-center items-center gap-5">
+            <form action="{{route('log.signUser')}}" method="post" class="font-libre flex flex-col justify-center items-center gap-5">
                 <div class="flex flex-col">
                     <input type="text" class="border-[1px] border-neutral-500/50 px-3 py-3 w-96 outline-none focus:outline-none active:outline-none" name="email" id="" placeholder="Email">
                     @error('email')
@@ -29,14 +29,14 @@
                     <input type="password" class="border-[1px] border-neutral-500/50 px-3 py-3 w-96 outline-none focus:outline-none active:outline-none" name="password" id="pass" placeholder="Mật khẩu">
                     <div>
                         <input type="checkbox" name="pw" value="1" id="pw">
-                        <span class="font-mono text-neutral-400">Hiện mật khẩu</span>
+                        <span class="font-libre text-neutral-400">Hiện mật khẩu</span>
                     </div>
                     @error('pass')
                         <span class="text-red-500">{{$message}}</span>
                     @enderror
                 </div>
                 <button class="my-5 px-10 py-3 bg-neutral-14 rounded-md text-white font-medium hover:bg-orange-500/90">Đăng nhập</button>
-                <p class="text-neutral-400 tracking-tight font-bold font-mono text-sm">Bạn chưa có tài khoản, vui lòng đăng ký <a href="{{route('log.register')}}" class="hover:underline cursor-pointer hover:italic text-neutral-14">tại đây</a></p>
+                <p class="text-neutral-400 tracking-tight font-libre text-sm">Bạn chưa có tài khoản, vui lòng đăng ký <a href="{{route('log.register')}}" class="hover:underline font-bold cursor-pointer hover:italic text-neutral-14">tại đây</a></p>
 
                 @csrf
             </form>

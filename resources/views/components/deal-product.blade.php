@@ -39,7 +39,7 @@
                     {{-- <span class="w-0 h-0 border-b-[52px] border-r-[15px] border-b-neutral-14 border-r-transparent"></span> --}}
                 </div>
                 <div class="border-neutral-300 border-b-2 col-span-1 md:col-span-2 py-3 flex items-center justify-end gap-4">
-                    <ul class="hidden  items-center justify-around gap-2 md:gap-3 xl:gap-5 font-mono sm:hidden md:flex ">
+                    <ul class="hidden  items-center justify-around gap-2 md:gap-3 xl:gap-5 font-libre sm:hidden md:flex ">
                         <li class="hover:text-neutral-14 flex justify-center"><a href="">Sofa</a></li>
                         <li class="hover:text-neutral-14 flex justify-center"><a href="">Trang trí</a></li>
                         <li class="hover:text-neutral-14 flex justify-center"><a href="">Ghế</a></li>

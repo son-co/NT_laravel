@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckOutController;
 use App\Http\Controllers\UserDetailController;
+use App\Http\Controllers\OrdersController;
 
 
 
@@ -32,6 +33,7 @@ Route::middleware('auth')->group(function ()  {
     Route::post('/addReview', [ProductsController::class, 'addReview'])->name('addReview');
     Route::get('/checkout', [CheckOutController::class, 'getCheckout'])->name('checkout');
     Route::get('/account/{id}', [UserDetailController::class, 'getAccount'])->name('account');
+    Route::get('/order', [OrdersController::class, 'saveOrder'])->name('order');
    
 });
 

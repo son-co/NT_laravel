@@ -6,7 +6,7 @@
         </a>
     </div>
     <div class="nav h-full hidden lg:block">
-        <ul class="flex gap-10 justify-center font-mono h-full items-center">
+        <ul class="flex gap-10 justify-center font-libre h-full items-center">
             <li class=" text-neutral-14 hover:text-neutral-14 h-full">
                 <a href="{{route('home')}}" class=" group relative flex h-full items-center cursor-pointer">
                     <span>Trang Chủ</span>
@@ -133,7 +133,7 @@
                                         </a>
                                     @endforeach
                                 @else
-                                    <p>Chưa có sản phẩm nào được thêm vào giở hàng</p>
+                                    <p class="px-3 py-3">Chưa có sản phẩm nào được thêm vào giỏ hàng</p>
                                 @endif
                             </div>
                             <a href="{{route('checkout')}}" class="bg-neutral-14 w-full flex  justify-center items-center px-3 py-3 text-white">
@@ -183,7 +183,7 @@
                         </label>
                     </div>
                     <div class=" px-5 py-5 h-screen text-neutral-14 bg-[#FFDCA9]/30">
-                        <ul class="flex flex-col justify-start font-mono divide-y-2 divide-neutral-14/30 gap-5 ">
+                        <ul class="flex flex-col justify-start font-libre divide-y-2 divide-neutral-14/30 gap-5 ">
                             <li class="text-neutral-14 hover:text-neutral-14 ">
                                 <a href="{{route('home')}}" class=" group relative flex  items-center cursor-pointer">
                                     <span>Trang Chủ</span>

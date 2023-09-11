@@ -1,7 +1,7 @@
 @extends('clients.layouts.page')
 
 @section('slider')
-    <div class="w-full h-full font-mono">
+    <div class="w-full h-full font-libre">
         <div class="slider relative">
             <img src="../images/bg_breadcrumb.jpg" alt="">
             <div class="absolute top-0 right-0 left-0 h-full flex flex-col justify-center items-center">
@@ -27,9 +27,7 @@
                         <li class="mr-2 openTab border hover:font-bold hover:text-neutral-14 " id="id2">
                             <button onclick="openTab('cmt');tabList('id2')" class=" inline-block p-4  rounded-t-lg " >Đơn mua</button>
                         </li>
-                        <li class="mr-2 openTab border hover:font-bold hover:text-neutral-14" id="id3">
-                            <button onclick="openTab('address');tabList('id3')" class=" inline-block p-4  rounded-t-lg " >Sổ địa chỉ</button>
-                        </li>
+                       
                         <li class="mr-2 openTab border hover:font-bold hover:text-neutral-14" id="id4">
                             <button onclick="openTab('changepassword');tabList('id4')" class=" inline-block p-4  rounded-t-lg " >Đổi mật khẩu</button>
                         </li>
@@ -44,22 +42,30 @@
                     <div class="hidden p-4 rounded-lg bg-gray-50 tab-content" id="cmt" >
                         <div class="divide-y">
                             <div  class="flex pb-3">
-                                <span class="text-3xl"><i class="fa-solid fa-circle-user"></i> </span>
-                                <div class="mx-3">
-                                    <span class="font-bold hover:cursor-pointer">a</span>
-                                    <p class="text-neutral-400 font-light text-sm">a</p>
-                                    <p class="text-sm text-gray-600">a</p>
-                                    <img src="{{asset('images/review/')}}" class="w-40 h-40" alt="">
-                                </div>
+                                @if(!empty($data))
+                                    <div class="divide-y-[1px]">
+                                        @foreach ($data as $item)
+                                            <a href="" class=" py-2 grid grid-cols-4 gap-3 justify-center items-center">
+                                                <div class="col-span-1">
+                                                    <img src="{{asset('images/product/'.$item->image)}}" class="w-14 h-14" alt="">
+                                                </div>
+                                                <div class="text-xs truncate px-2 text-left col-span-2">
+                                                    <p class="truncate uppercase w-full font-bold text-stone-700">{{$item->name}}</p>
+                                                    <p class="text-red-400">{{$item->price}}</p>
+                                                    <p class="text-red-400">x{{$item->quantity}}</p>
+                                                </div>
+                                                <div class="text-xs text-neutral-14 col-span-1">
+                                                    <p>{{number_format((int)$item->price * $item->quantity)}}đ</p>
+                                                </div>
+                                            </a>
+                                        @endforeach
+                                    </div>
+                                @endif
                             </div>
                         </div>
                         
                     </div>
-                    <div class="hidden p-4 rounded-lg bg-gray-50 tab-content w-full" id="address" >
-                        <p class="text-sm text-gray-500 ">
-                            address
-                        </p>
-                    </div>
+                    
                     <div class="hidden p-4 rounded-lg bg-gray-50 tab-content w-full" id="changepassword" >
                         <p class="text-xl text-center border-b pb-3 font-medium">Thay Đổi Mật Khẩu</p>
                        <form action="">

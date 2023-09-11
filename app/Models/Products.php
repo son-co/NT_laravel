@@ -19,6 +19,11 @@ class Products extends Model
         return $this->hasMany(Cart::class, 'productID'); // Thay Cart::class bằng tên model thật của giỏ hàng
     }
 
+    public function OrdersDetail()
+    {
+        return $this->hasMany(OrdersDetail::class, 'productID'); // Thay Cart::class bằng tên model thật của giỏ hàng
+    }
+
     public function reviews()
     {
         return $this->hasMany(Reviews::class, 'productID'); // Thay Cart::class bằng tên model thật của giỏ hàng

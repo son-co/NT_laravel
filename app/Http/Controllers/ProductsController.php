@@ -24,10 +24,8 @@ class ProductsController extends Controller
     }
 
     public function index(){
-    
         $product = $this->product->getAllProduct();
         return view('home', ['product' => $product]);
-       
     }
 
     public function headerCartComposer(){
